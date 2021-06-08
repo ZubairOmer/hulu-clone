@@ -22,7 +22,7 @@ const VedioCard = forwardRef(({ movie }, ref) => {
                 {movie.vote_count}
             </p>
         </div>
-    ))
-}
+    );
+})
 
 export default VedioCard
