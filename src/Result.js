@@ -4,12 +4,12 @@ import VedioCard from './VedioCard'
 import axios from './axios'
 import requests from './requests'
 
-export default function Result() {
+export default function Result({ selectedOption }) {
     const [movies, setMovies] = useState([])
 
     useEffect(() => {
         async function fetchData() {
-            const request = await axios.get(requests.fetchActionMovies)
+            const request = await axios.get(selectedOption)
             setMovies(request.data.results)
             return request
         }

@@ -19,3 +19,11 @@
 .vedioCard > p {
   padding-top: 10px;
 }
+
+.vedioCard__stats {
+  display: none;
+}
+
+.vedioCard:hover .vedioCard__stats {
+  display: inline;
+}
