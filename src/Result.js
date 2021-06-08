@@ -3,6 +3,7 @@ import './Result.css'
 import VedioCard from './VedioCard'
 import axios from './axios'
 import requests from './requests'
+import FlipMove from 'react-flip-move'
 
 export default function Result({ selectedOption }) {
     const [movies, setMovies] = useState([])
@@ -14,14 +15,16 @@ export default function Result({ selectedOption }) {
             return request
         }
         fetchData();
-    }, [])
+    }, [selectedOption])
     //design don
 
     return (
         <div className='result'>
-            {movies.map(movie => (
-                <VedioCard movie={movie} />
-            ))}
+            <FlipMove>
+                {movies.map(movie => (
+                    <VedioCard key={movie.id} movie={movie} />
+                ))}
+            </FlipMove>
         </div>
     )
 }

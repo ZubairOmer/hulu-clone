@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import './VedioCard.css'
 import TextTruncate from 'react-text-truncate'
 import { ThumbUpSharp } from '@material-ui/icons'
 
-export default function VedioCard({ movie }) {
+const VedioCard = forwardRef(({ movie }, ref) => {
     const base_url = 'https://image.tmdb.org/t/p/original/' //for images
     return (
-        <div className='vedioCard'>
+        <div ref={ref} className='vedioCard'>
             <img src={`${base_url}${movie.backdrop_path || movie.poster_path}`} alt="" />
             <TextTruncate
                 line={1}
@@ -22,5 +22,7 @@ export default function VedioCard({ movie }) {
                 {movie.vote_count}
             </p>
         </div>
-    )
+    ))
 }
+
+export default VedioCard
