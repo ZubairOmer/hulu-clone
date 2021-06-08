@@ -14,6 +14,7 @@ export default function Result() {
         }
         fetchData();
     }, [])
+    //design don
 
     return (
         <div className='result'>
